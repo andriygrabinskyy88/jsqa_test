@@ -386,17 +386,19 @@ console.log('\nLesson 01 - Homework:\n\n!!! Please answer the questions in this 
 
 // Task 01.02 - 2 points
 // Question: How we can tell the JS interpreter to use strict mode?
-// Answer: TODO
+// Answer: 'use strict';
 
 // Task 01.03 - 2 points
 // Q: What simple data types are used in JS?
-// A: TODO
+// A: String Number Boolean Null Undefined Symbol
 
 // Task 01.04 - 2 points
 // Q: What complex data types are used in JS?
-// A: TODO
+// A: function, object
 
 // Task 01.05 - 3 points
 // Q: Please write a function which calculates the difference between two numbers
-// A: TODO
+// A: function diff (a, b){
+//    return a-b;
+//  }
 // Lesson 01 Homework - End
