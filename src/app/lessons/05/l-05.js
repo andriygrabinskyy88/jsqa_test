@@ -523,7 +523,7 @@ console.h1('Task 05.01');
 // Запиши її назву у нову глобальну змінну 'createdByConstructor'.
 // TODO: пиши свій код тут:
 
-let createdByConstructor;
+let createdByConstructor = 'birthdayDate';
 
 if (createdByConstructor && createdByConstructor === 'birthdayDate') {
 	console.log('\n\tThanks! This task is done');
@@ -542,17 +542,20 @@ console.log('\n\tPlease implement this task and few tests to check it');
 // 2. var b = 10;
 // 3. const c = "20";
 // 4. d = function(){};
-// 
+console.log('For task 05.02.1 the answer 1');
 // 
 // 05.02.2 Створи змінні наступних типів. Для тих типів, де це неможливо, напиши коментар "Типу не існує"
 // 
-// 1. string
-// 2. char
-// 3. int
-// 4. float
+// 1. var string;
+let name = 'ali';
+// 2. char \\ не існує
+// 3. int \\ не існує
+// 4. float \\ не існує
 // 5. boolean
-// 6. interface
+let boolean = false;
+// 6. interface \\ не існує
 // 7. undefined
+let und;
 // 
 // 
 // 05.02.3 Знайди тут оператор строгого порівняння та випишіть його:
@@ -562,7 +565,7 @@ console.log('\n\tPlease implement this task and few tests to check it');
 // 3. &&
 // 4. ===
 // 5. EQ
-// 
+console.log('For task 05.02.3 the answer ===');
 // 
 // 05.02.4 Який з цих виразів є помилковим?
 // 
@@ -576,7 +579,7 @@ console.log('\n\tPlease implement this task and few tests to check it');
 // 1. ||
 // 2. OR
 // 3. |
-// 
+console.log('For task 05.02.5 the answer ||');
 // 
 // 05.02.6 Який з цих операторів означає "логічне ТА"?
 // 
@@ -584,7 +587,7 @@ console.log('\n\tPlease implement this task and few tests to check it');
 // 2. and
 // 3. &&
 // 4. &
-// 
+console.log('For task 05.02.5 the answer &&');
 // 
 // 05.02.7 Чи правда, що оператор ‘typeof’ використовується для:
 // 
@@ -597,7 +600,7 @@ console.log('\n\tPlease implement this task and few tests to check it');
 // 1. var y = x := z | m;
 // 2. var y = x : z ? m;
 // 3. var y = x ? z : m;
-// 
+console.log('For task 05.02.8 the answer 1 and 2');
 // 
 // 
 // 05.02.9 Де тут — правильний функціональний вираз?
@@ -606,7 +609,7 @@ console.log('\n\tPlease implement this task and few tests to check it');
 // 2. var function x(){}
 // 3. var z = new Function('argument', '// TODO')
 // 4. var y = function(){}
-// 
+console.log('For task 05.02.9 the answer 4');
 // 
 // 
 // 05.02.10 Де конкатенація рядків зроблена з помилкою?
@@ -615,16 +618,25 @@ console.log('\n\tPlease implement this task and few tests to check it');
 // 2. "str1" ~ "str2"
 // 3. "str1".concat("str2")
 // 3. String.concat("str1", "str2")
+console.log('For task 05.02.10 the answer 2');
 
 console.h1('Task 05.03');
 
 // Points: 2
 // Знайди у файлові даного уроку перший коментар, що починається з "// FIXME" і виконай його,
 // записавши результуючий код тут.
+function Tree(name) {
+	this.name = name;
+	console.log('The tree name is: ' + this.name);
+}
 
-// TODO: пиши код тут:
-console.log('\n\tPlease implement this task');
+var theTree = new Tree('Redwood');
 
-
+var result = (typeof(theTree.name));
+if (theTree && (typeof(theTree.name)) === result){
+	console.log('\n\tThanks! This task is done');
+} else {
+	console.log('\n\tPlease implement this task');
+}
 
 console.h1('Lesson 05 - Homework End');
