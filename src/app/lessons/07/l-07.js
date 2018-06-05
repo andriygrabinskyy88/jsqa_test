@@ -275,7 +275,7 @@
 		return function func1InternalFunc() {}
 	}
 
-	// TODO: дай відповідь тут:
+	// так, тому що всі ф-ції в JS є замиканнями
 
 	console.log('\nTask 07.02');
 	console.log('\n\t Please implement this task');
@@ -285,10 +285,18 @@
 	// TODO: пиши код тут:
 
 	function sillyClosure() {
-		return this;
+		var count = 1;
+		var someFunction = function () {
+			console.log(count++);
+		}
+		return someFunction;
 	}
+	var counter = sillyClosure();
 
-	console.log(sillyClosure())
+	counter();
+	counter();
+	counter();
+
 
 	console.log('\nTask 07.03');
 	console.log('\n\t Please implement this task');
@@ -296,6 +304,7 @@
 	// Points: 2
 	// Є замикання iAmClosure із внутрішньою змінною iAmEnclosed.
 	// Як можна отримати доступ до цієї змінної?
+	// return iAmEnclosed
 	function iAmClosure() {
 		var iAmEnclosed = 'secret';
 		return false;
@@ -362,6 +371,23 @@
 
 	var accessEnclosed = iAmClosureFour();
 	var disclosedInternalFour = accessEnclosed();
+
+	function taskfourFunction() {
+		var name = 'ali';
+
+		function someFunction() {
+			console.log(name);
+		}
+
+		return someFunction;
+
+	}
+	var result = taskfourFunction()
+
+	console.log(result);
+	result();
+	
+
 
 })();
 // Завершення глобальної анонімної функції
