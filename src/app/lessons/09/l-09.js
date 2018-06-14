@@ -97,7 +97,7 @@
         myPrivateVar = 0;
         // A private function which logs any arguments 
         myPrivateMethod = function (foo) {
-            console.log(foo);
+            console.log('i can see u:'+ foo);
         };
         return {
             // A public variable 
@@ -111,6 +111,7 @@
             }
         };
     })();
+
 
     // 
     // Шаблони проектування
@@ -214,6 +215,7 @@
     // Points: 1
     // Вище у цьому файлі за допомогою функції JSQA_APP.namespace() глобальний об'єкт JSQA_APP наповнено внутрішніми просторами імен
     // Виведи у консоль значення об'єкта JSQA_APP і проаналізуй побачене. Чи розумієш ти, як утворилася такка структура?
+    console.log(JSQA_APP);
 
     console.h2('Task 09.02');
     console.log('Please implement this task');
@@ -222,20 +224,48 @@
     // JSQA_APP.modules.mainModule
     // Знову виведи у консоль значення об'єкта JSQA_APP і переконайся, що новий модуль з'явився у об'єкті
     // Tip: для зручності і краси, можна виводити так: 
-    // console.log(JSON.stringify(JSQA_APP, null, '  '));
+    JSQA_APP.namespace('modules.mainModule');
+    console.log(JSQA_APP);
+    console.log(JSON.stringify(JSQA_APP, null, '  '));
 
     console.h2('Task 09.03');
     console.log('Please implement this task');
     // Points: 3
     // Користуючись прикладом шаблону "Приватні властивості і методи" вище, створи новий об'єкт student з приватною властивіcтю id,
     // що буде доступною тільки для читання через публічний метод getId()
+    const student = (function () {
+        const id = "some student id"; //private
+        return { // public 
+            getId: function () {
+                return id;
+            }
+        };
+    }());
+    console.log(student.getId());
 
     console.h2('Task 09.04');
     console.log('Please implement this task');
     // Points: 4
     // Користуючись прикладом шаблону "Модуль" вище, додай до об'єкта student приватний метод analyzeHomeworkTask(homework_id),
     // що буде доступний через публічний метод doHomework(homework_id)
-
+    const student1 = (function () {
+        let id = 1;
+        let homework_id = "some student homework_id"; //private
+         function analyzeHomeworkTask(homework_id){         //private
+            console.log('analyzeHomeworkTask i can see u: '+ homework_id);
+        }
+        return { // public 
+            getId: function () {
+                return id;
+            },
+            doHomework: function(homework_id){
+                homework_id = "opa opa";
+                analyzeHomeworkTask(homework_id);
+            console.log(homework_id);            }
+        };
+    }());
+    console.log(student1.doHomework());
     console.h1('Lesson 09 - Homework End');
+
 
 })();
