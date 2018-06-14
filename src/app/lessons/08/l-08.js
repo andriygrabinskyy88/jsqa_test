@@ -415,16 +415,36 @@
     // Напиши функцію useAnonymousCallback, що приймає параметр callback, і виклич її, 
     // передавши анонімну функцію в якості параметра.
     // TODO: пиши тут:
-
+    function useAnonymousCallback(callback) {
+        if (typeof (callback) === 'function') {
+            return callback;
+        }
+    }
+    let result = useAnonymousCallback(function () {
+        console.log("i am fine");
+        return 'ok';
+    });
+    console.log(result());
     console.log('Please implement this task');
 
     console.log('\nTask 08.02');
     // Points: 2
     // Напиши функцію useAnonymousCallback, що приймає параметр callback, і виклич її, 
     // передавши їй в якості параметра іменовану функцію.
+    function useAnonymousCallback(callback) {
+        if (typeof (callback) === 'function') {
+            return callback;
+        }
+    }
 
+    function task2() {
+        console.log("task 2");
+        return 'task 2 ok'
+    }
+    var resulttask2 = useAnonymousCallback(task2);
+    console.log(resulttask2());
     console.log('Please implement this task');
-    
+
 
     console.log('\nTask 08.03');
     // Points: 3
@@ -433,8 +453,23 @@
     // Напиши код, що використовує цю конструкцію для того, щоб вивести у консоль
     // значення змінної enclosed через замикання.
     // TODO: пиши тут:
+    function workingCallback(callback) {
+        let enclosed = 'task 3 done'
 
-    console.log('Please implement this task');    
+        return callback(enclosed);
+
+
+    }
+
+    function task3(a) {
+        return a+'....task 3 was used'
+    }
+
+    let result3 = workingCallback(task3);
+    console.log(result3);
+
+
+    console.log('Please implement this task');
 
     console.h1('Lesson 08 - Homework End');
 
